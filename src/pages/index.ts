@@ -1,0 +1,13 @@
+export {default as Banner} from "./banners/Banner"
+export {default as Dashboard} from './Dashboard'
+export {default as UserRole} from './userrole/UserRole'
+export {default as FlashSale} from './flashsale/FlashSale'
+export {default as Signin} from './signin'  
+export {default as Premium } from './customers/Premium'
+export {default as Users} from './customers/Users'
+export {default as Categories} from './products/categories/Categories'
+export {default as Products} from './products/Product/Products'
+export {default as Refund} from './transactions/Refund'
+export {default as Transactions} from './transactions/transactions/Transactions'
+export {default as Coupons} from './coupons/Coupons'
+export {default as UserDetail} from './customers/UserDetail'

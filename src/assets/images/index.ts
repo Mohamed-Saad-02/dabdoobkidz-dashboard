@@ -1,0 +1,1 @@
+export {default as Recatangle} from './rectangle.svg';
