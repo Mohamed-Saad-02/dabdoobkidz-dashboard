@@ -81,9 +81,10 @@ const ActionComponent = (record: { id: number; isActive: boolean }) => {
   );
   const { mutate: toggleUserStatusMutation, isLoading: isToggling } =
     useMutation(
-      (mutationId) => toggleUserStatus(mutationId, {
-        isActive: !record.isActive,
-      }),
+      (mutationId) =>
+        toggleUserStatus(mutationId, {
+          isActive: !record.isActive,
+        }),
       {
         onSuccess: () => {
           openNotification({
@@ -115,7 +116,7 @@ const ActionComponent = (record: { id: number; isActive: boolean }) => {
         <Spin />
       ) : (
         <DeleteOutlined
-          className="text-red-500 cursor-pointer text-[22px]"
+          className="text-primary cursor-pointer text-[22px]"
           onClick={() => {
             deleteUserMutation(record.id);
           }}

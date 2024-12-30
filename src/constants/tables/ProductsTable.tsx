@@ -93,26 +93,25 @@ const ActionsComponent = ({
     }
   );
   const queryClient = useQueryClient();
-  const { mutate: deleteProductMutaion, isLoading: deleteLoading } = useMutation(()=>(
-    deleteProduct(record.id)
-  ), {
-    onSuccess: () => {
-      openNotification({
-        type: "success",
-        message: "Product Deleted Successfully",
-        description: "Product has been deleted successfully",
-      });
-      queryClient.invalidateQueries("tableData");
-    },
-    onError: (error: ApiError) => {
-      openNotification({
-        type: "error",
-        message: "Error Deleting Product",
-        description: error.response?.data.message || "Something went wrong",
-      });
-    },
-  });
-  
+  const { mutate: deleteProductMutaion, isLoading: deleteLoading } =
+    useMutation(() => deleteProduct(record.id), {
+      onSuccess: () => {
+        openNotification({
+          type: "success",
+          message: "Product Deleted Successfully",
+          description: "Product has been deleted successfully",
+        });
+        queryClient.invalidateQueries("tableData");
+      },
+      onError: (error: ApiError) => {
+        openNotification({
+          type: "error",
+          message: "Error Deleting Product",
+          description: error.response?.data.message || "Something went wrong",
+        });
+      },
+    });
+
   return (
     <div className="flex gap-4">
       <Link to={`/product/${record.id}`}>
@@ -126,11 +125,11 @@ const ActionsComponent = ({
         defaultChecked={record.isActive}
       />
       <DeleteOutlined
-
         onClick={() => {
           deleteProductMutaion();
         }}
-      className="text-red-500 text-xl cursor-pointer " />
+        className="text-primary text-xl cursor-pointer "
+      />
     </div>
   );
 };

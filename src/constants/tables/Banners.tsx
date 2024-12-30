@@ -3,27 +3,29 @@ import {
   EditOutlined,
   LoadingOutlined,
 } from "@ant-design/icons";
+import { Spin } from "antd";
 import { useMutation, useQueryClient } from "react-query";
+import { Link } from "react-router-dom";
 import { deleteBanner } from "../../api/Banner";
 import openNotification from "../../components/ui/Notfication";
 import { ApiError } from "../../types/ApiError";
-import { Link } from "react-router-dom";
-import { Spin } from "antd";
 
 export const BannersTable = [
   {
     title: "ID",
     render: (record: { id: string; image: string }) => {
-      console.log(record?.image , "imagebannerintable");
-      
-     return <div className="flex gap-2">
-        <p>{record.id}</p>
-        <img
-          src={record.image}
-          alt="banner"
-          className="w-[82px]  object-cover rounded-lg mr-2"
-        />
-      </div>
+      console.log(record?.image, "imagebannerintable");
+
+      return (
+        <div className="flex gap-2">
+          <p>{record.id}</p>
+          <img
+            src={record.image}
+            alt="banner"
+            className="w-[82px]  object-cover rounded-lg mr-2"
+          />
+        </div>
+      );
     },
     key: "id",
   },
@@ -75,9 +77,7 @@ const ActionsComponent = ({ record }: { record: { id: number } }) => {
 
   return (
     <div className="flex gap-4">
-      <Link
-        to={`/banners?brandId=${record.id}`}
-      >
+      <Link to={`/banners?brandId=${record.id}`}>
         <EditOutlined className="cursor-pointer text-[20px] hover:text-primary" />
       </Link>
       {isLoading ? (
@@ -87,7 +87,7 @@ const ActionsComponent = ({ record }: { record: { id: number } }) => {
           onClick={() => {
             mutate();
           }}
-          className="cursor-pointer text-[20px] text-[red]"
+          className="cursor-pointer text-[20px] text-primary"
         />
       )}
     </div>

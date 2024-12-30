@@ -5,11 +5,11 @@ type StatusProps = {
 
 export default function Status({ status, text }: StatusProps) {
   let style = "";
-  const success = "bg-[#D7F0E580] text-[#36B37E]";
-  const error = "bg-[#FFDDD680] text-[#FF5630]";
-  const pending = "bg-[#CCE0FF80] text-[#0065FF]";
-  const warining = "bg-[#FFFAE580] text-[#FFAB00]";
-  const info = "bg-[#E5E7EB] text-[#3B4453]";
+  const success = "bg-[#999] text-[#444]";
+  const error = "bg-[#999] text-[#444]";
+  const pending = "bg-[#999] text-[#444]";
+  const warining = "bg-[#999] text-[#444]";
+  const info = "bg-[#999] text-[#444]";
   if (status === "success") {
     style = success;
   } else if (status === "error") {
@@ -21,8 +21,7 @@ export default function Status({ status, text }: StatusProps) {
   } else if (status === "info") {
     style = info;
   }
-  console.log(status , text , "status");
-  
+  console.log(status, text, "status");
 
   return (
     <div className={`text-[14px] font-[500] w-fit p-1 rounded-md ${style}`}>

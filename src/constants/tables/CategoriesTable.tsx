@@ -5,10 +5,7 @@ import { useMutation, useQueryClient } from "react-query";
 import { deleteCategory } from "../../api/categories";
 import openNotification from "../../components/ui/Notfication";
 import { ApiError } from "../../types/ApiError";
-import {
-  DeleteOutlined,
-  LoadingOutlined,
-} from "@ant-design/icons";
+import { DeleteOutlined, LoadingOutlined } from "@ant-design/icons";
 
 const { Title } = Typography;
 export const categoriesTable = [
@@ -88,7 +85,7 @@ const ActionsComponent = ({ record }: { record: { id: number } }) => {
           onClick={() => {
             mutate();
           }}
-          className="cursor-pointer text-[20px] text-[red]"
+          className="cursor-pointer text-[20px] text-primary"
         />
       )}
     </div>

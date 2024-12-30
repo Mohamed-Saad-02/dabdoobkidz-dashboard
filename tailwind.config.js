@@ -7,12 +7,12 @@ export default {
         sans: ["Plus Jakarta Sans", "sans-serif"],
       },
       colors: {
-        primary: "#AD6B46", // Example primary color
+        primary: "#000", // Example primary color
         background: "#F4F5F6",
         headers: "#101623",
         gray: "#3B4453",
-        textgray : "#A0A8B0",
-        textdark : "#101623",
+        textgray: "#A0A8B0",
+        textdark: "#101623",
       },
 
       fontSize: {

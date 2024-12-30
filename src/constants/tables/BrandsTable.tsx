@@ -84,7 +84,7 @@ const ActionsComponent = ({ record }: { record: { id: number } }) => {
           onClick={() => {
             mutate();
           }}
-          className="cursor-pointer text-[20px] text-[red]"
+          className="cursor-pointer text-[20px] text-primary"
         />
       )}
     </div>

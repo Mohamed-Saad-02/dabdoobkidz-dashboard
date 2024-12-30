@@ -10,7 +10,6 @@ import { userTableColumns } from "../../constants/tables/UsersTable";
 import useDebounce from "../../hooks/useDebounceHook";
 
 export default function Users() {
-  const [filterUsers, setFilterUsers] = useState();
   const [currentPage, setCurrentPage] = useState(1);
   const [search, setSearch] = useState("");
   const debounceSerach = useDebounce(search, 500);

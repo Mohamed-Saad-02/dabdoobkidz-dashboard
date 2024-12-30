@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-import { Item } from "../../types/Order";
 import { Button, Typography } from "antd";
 import Status from "../../components/common/Status";
 
@@ -33,12 +32,11 @@ export const transactionTable = [
     },
   },
   {
-    title : "Shipping Fees",
+    title: "Shipping Fees",
     dataIndex: "shippingFees",
-
   },
   {
-    title : "Payment Method",
+    title: "Payment Method",
     dataIndex: "paymentMethod",
   },
   {
@@ -72,15 +70,15 @@ export const transactionTable = [
   {
     title: "Shipping",
     render: (record: { shippingStatus: string }) => {
-      console.log(record.shippingStatus , "shippingStatusalldat");
+      console.log(record.shippingStatus, "shippingStatusalldat");
 
       if (record.shippingStatus === "Delivered") {
-        console.log(record.shippingStatus , "shippingStatus");
+        console.log(record.shippingStatus, "shippingStatus");
 
         return <Status status="success" text={record.shippingStatus} />;
       }
       if (record.shippingStatus === "Pending") {
-        console.log(record.shippingStatus , "shippingStatus");
+        console.log(record.shippingStatus, "shippingStatus");
         return <Status status="warning" text={record.shippingStatus} />;
       }
       if (record.shippingStatus === "Failed") {
@@ -98,7 +96,8 @@ export const transactionTable = [
     title: "Ship",
     render: (record: { id: number; shippingStatus: string }) => (
       <div>
-        {record.shippingStatus === "Shipped" || record.shippingStatus === "Delivered" ? (
+        {record.shippingStatus === "Shipped" ||
+        record.shippingStatus === "Delivered" ? (
           <Button className="!bg-white border-none !p-[0px]" disabled>
             <Title className="!text-primary !mb-0 " level={5}>
               Ship

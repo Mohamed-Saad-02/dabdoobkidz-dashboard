@@ -1,12 +1,10 @@
+import { ConfigProvider } from "antd";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { QueryClient, QueryClientProvider } from "react-query";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { routes } from "./constants/routes";
 import "./index.css";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { ConfigProvider } from "antd";
-import { onMessage } from "@firebase/messaging";
-import { analytics } from "./firebase";
 // import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
 const router = createBrowserRouter(routes);
@@ -18,7 +16,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <ConfigProvider
         theme={{
           token: {
-            colorPrimary: "#AD6B46",
+            colorPrimary: "#777",
           },
         }}
       >

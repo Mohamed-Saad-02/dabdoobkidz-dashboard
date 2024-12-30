@@ -1,4 +1,8 @@
-import { DeleteOutlined, EditOutlined, LoadingOutlined } from "@ant-design/icons";
+import {
+  DeleteOutlined,
+  EditOutlined,
+  LoadingOutlined,
+} from "@ant-design/icons";
 import { useMutation, useQueryClient } from "react-query";
 
 import { Link } from "react-router-dom";
@@ -34,11 +38,9 @@ export const CouponsTable = [
     render: (record: { status }) => {
       if (record.status === "active") {
         return <Status status="success" text={record.status} />;
-      }
-      else if (record.status === "upcoming") {
+      } else if (record.status === "upcoming") {
         return <Status status="warning" text={record.status} />;
-      }
-      else {
+      } else {
         return <Status status="error" text={record.status} />;
       }
     },
@@ -63,7 +65,6 @@ export const CouponsTable = [
     render: (record: { id: number }) => <ActionsComponent record={record} />,
   },
 ];
-
 
 const ActionsComponent = ({ record }: { record: { id: number } }) => {
   const queryClient = useQueryClient();
@@ -90,8 +91,8 @@ const ActionsComponent = ({ record }: { record: { id: number } }) => {
   );
   return (
     <div className="flex gap-4">
-      <Link to={`/coupon/${record.id}`}>
-        <EditOutlined className="cursor-pointer text-[20px] hover:text-primary" />
+      <Link to={`/coupon/${record.id}`} className="hover:text-primary">
+        <EditOutlined className="cursor-pointer text-[20px]" />
       </Link>
       {isLoading ? (
         <Spin indicator={<LoadingOutlined spin />} size="small" />
@@ -100,7 +101,7 @@ const ActionsComponent = ({ record }: { record: { id: number } }) => {
           onClick={() => {
             mutate();
           }}
-          className="cursor-pointer text-[20px] text-[red]"
+          className="cursor-pointer text-[20px] text-primary"
         />
       )}
     </div>

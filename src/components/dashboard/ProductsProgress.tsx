@@ -13,7 +13,7 @@ const ProductsProgress = ({ data }: any) => {
           size={200}
           format={() => ""}
           strokeWidth={8}
-          strokeColor="#A0522D" // Brown color for the outer circle
+          strokeColor="#000" // Brown color for the outer circle
           trailColor="#F5F5F5" // Light gray for the trail
           style={{ position: "absolute", top: -100, left: 0 }}
         />
@@ -23,7 +23,7 @@ const ProductsProgress = ({ data }: any) => {
           size={150}
           strokeWidth={8}
           format={() => ""}
-          strokeColor="#FFD700" // Yellow color for the inner circle
+          strokeColor="#aaa" // Yellow color for the inner circle
           trailColor="transparent"
           style={{ position: "absolute", top: -75, left: 25 }}
         />
@@ -36,7 +36,7 @@ const ProductsProgress = ({ data }: any) => {
             style={{
               width: 10,
               height: 10,
-              backgroundColor: "#A0522D",
+              backgroundColor: "#000",
               borderRadius: "50%",
               marginRight: 8,
             }}
@@ -53,7 +53,7 @@ const ProductsProgress = ({ data }: any) => {
             style={{
               width: 10,
               height: 10,
-              backgroundColor: "#FFD700",
+              backgroundColor: "#aaa",
               borderRadius: "50%",
               marginRight: 8,
             }}

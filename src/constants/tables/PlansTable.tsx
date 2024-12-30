@@ -3,7 +3,7 @@ import {
   EditOutlined,
   LoadingOutlined,
 } from "@ant-design/icons";
-import {  useMutation, useQueryClient } from "react-query";
+import { useMutation, useQueryClient } from "react-query";
 import { Link } from "react-router-dom";
 import { deletePlan } from "../../api/plans";
 import openNotification from "../../components/ui/Notfication";
@@ -18,9 +18,7 @@ export const PlansTable = [
   },
   {
     title: "Name",
-    render: (record: { name: string }) => (
-      <span>{record.name}</span>
-    ),
+    render: (record: { name: string }) => <span>{record.name}</span>,
   },
   {
     title: "Duration",
@@ -73,7 +71,7 @@ const ActionsComponent = ({ record }: { record: { id: number } }) => {
           onClick={() => {
             mutate();
           }}
-          className="cursor-pointer text-[20px] text-[red]"
+          className="cursor-pointer text-[20px] text-primary"
         />
       )}
     </div>

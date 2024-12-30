@@ -60,11 +60,7 @@ export default function BarChartComponent() {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar
-          dataKey="sales"
-          fill="#AD6B46"
-          shape={<CustomBarShape />}
-        />
+        <Bar dataKey="sales" fill="#000" shape={<CustomBarShape />} />
       </BarChart>
     </ResponsiveContainer>
   );

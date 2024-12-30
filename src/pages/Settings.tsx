@@ -17,7 +17,6 @@ import openNotification from "../components/ui/Notfication";
 import { ApiError } from "../types/ApiError";
 import useLocalStorage from "../hooks/useLocalStorage";
 
-
 export default function Settings() {
   const { data: userData, isLoading: userDataLoading } = useQuery(
     "profile",
@@ -25,7 +24,7 @@ export default function Settings() {
   );
   const { Title, Text } = Typography;
   const [token] = useLocalStorage<string>("accessToken", "null");
-  
+
   const [form] = Form.useForm();
   type FieldType = {
     name: string;
@@ -35,12 +34,11 @@ export default function Settings() {
   const [emailOpen, setEmailOpen] = useState(false);
   const [passwordOpen, setPasswordOpen] = useState(false);
   const query = useQueryClient();
-  
+
   const { mutate: updateProfileMutation, isLoading: updateLoading } =
     useMutation((data: User) => {
       return updateProfile(userData?.id, data);
     });
-
 
   const [img, setImg] = useState(userData?.avatar);
   useEffect(() => {
@@ -54,12 +52,11 @@ export default function Settings() {
     });
   }, [userData, form]);
 
-  const onFinish: FormProps<FieldType>["onFinish"] = async(values) => {
+  const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
     const formData = new FormData();
     formData.append("file", img);
-    const imageUrl =await uploadFile(img , token , img.name);
+    const imageUrl = await uploadFile(img, token, img.name);
 
-    
     updateProfileMutation(
       {
         firstName: values.name.split(" ")[0],
@@ -87,7 +84,6 @@ export default function Settings() {
     );
   };
 
-  
   if (userDataLoading)
     return (
       <div className="flex justify-center items-center h-full">
@@ -113,7 +109,7 @@ export default function Settings() {
             <Text>Only *.png, *.jpg and *.jpeg image files are accepted</Text>
           </div>
           <Form.Item<FieldType> name="avatar">
-            <ProfileUpload onChange={setImg}/>
+            <ProfileUpload onChange={setImg} />
           </Form.Item>
         </div>
 
@@ -156,7 +152,7 @@ export default function Settings() {
           <Text className="text-[14px]">Email</Text>
           <div className="w-[600px] py-2 text-center">{userData?.email}</div>
           <Button
-            className="p-4 border border-primary text-primary"
+            className="p-4 border border-headers text-headers"
             htmlType="submit"
             onClick={() => setEmailOpen(true)}
           >
@@ -169,7 +165,7 @@ export default function Settings() {
             <span className="font-[800] text-[24px]">............</span>
           </div>
           <Button
-            className="p-4 border border-primary text-primary"
+            className="p-4 border border-headers text-headers"
             htmlType="submit"
             onClick={() => setPasswordOpen(true)}
           >

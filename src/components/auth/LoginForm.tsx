@@ -3,7 +3,6 @@ import { Button, Checkbox, Form, Input, Typography } from "antd";
 import { useMutation, useQueryClient } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../api/auth";
-import Logo from "../../assets/logo.svg";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import openNotification from "../ui/Notfication";
 
@@ -58,7 +57,7 @@ export default function LoginForm() {
   return (
     <div className="flex flex-col flex-[1] gap-2 mt-[52px]">
       <div className="w-[428px] mx-auto">
-        <img src={Logo} alt="logo" className="w-[200px]" />
+        <div className="h-[100px]" />
         <Title level={2} className="!mb-0 !font-bold">
           Hi There!
         </Title>
