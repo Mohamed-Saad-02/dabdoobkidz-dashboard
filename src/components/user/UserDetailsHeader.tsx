@@ -6,7 +6,6 @@ import { User } from "../../types/User";
 import Header from "../Header";
 
 import { useState } from "react";
-import dabdoob from "../../assets/icons/dabdoob-icon.png";
 import { ApiError } from "../../types/ApiError";
 import openNotification from "../ui/Notfication";
 import UpdateUserModal from "./updateUserModal";
@@ -100,8 +99,7 @@ export default function UserHeaderDetails({
             </div>
             {user?.plan && (
               <div className="flex items-center gap-[6px] ">
-                <img className="w-[62px] object-contain" src={dabdoob} alt="" />
-                <span className="font-[600] text-[24px]  text-[#8C2A20]">
+                <span className="font-[600] text-[24px]  text-primary">
                   Premium
                 </span>
               </div>
